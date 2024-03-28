@@ -7,6 +7,7 @@ const app = express();
 const port = 3000; // Adjust port if needed
 const allowedOrigins = process.env.ALLOWED_ORIGINS || ''
 const allowedOriginsArray = allowedOrigins.split(",").map(item => item.trim());
+console.log(allowedOriginsArray);
 app.use(cors({ origin: allowedOriginsArray })); // Allow requests from React app origin
 app.use(express.json()); // Parse incoming JSON data
 
