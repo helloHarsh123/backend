@@ -10,6 +10,9 @@ const allowedOriginsArray = allowedOrigins.split(",").map(item => item.trim());
 app.use(cors({ origin: allowedOriginsArray })); // Allow requests from React app origin
 app.use(express.json()); // Parse incoming JSON data
 
+app.get('/', (req, res) => {
+  res.send('Hey this is my API running 🥳')
+})
 app.post('/chat', async (req, res) => {
   try {
     const userInput = req.body?.userInput;
